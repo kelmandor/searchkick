@@ -777,7 +777,8 @@ module Searchkick
           payload[:highlight][:fields] = {}
 
           highlight_fields.each do |name, opts|
-            payload[:highlight][:fields]["#{name}.#{@match_suffix}"] = opts || {}
+            # payload[:highlight][:fields]["#{name}.#{@match_suffix}"] = opts || {}
+            payload[:highlight][:fields]["#{name}.analyzed"] = opts || {}
           end
         end
       end
